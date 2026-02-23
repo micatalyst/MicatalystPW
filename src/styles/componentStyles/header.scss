@@ -12,14 +12,15 @@
 
   width: 100%;
   padding: 1.25rem 1.875rem;
+  line-height: $line-height-value;
 
   background-color: var(--header-bg-color);
   //border-bottom: 1px solid var(--header-border-color);
 }
 
-.header__logo {
-  width: 8.4rem;
-  height: auto;
+.header-logo {
+  width: auto;
+  height: $header-logo-size;
   align-self: center;
 }
 

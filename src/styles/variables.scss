@@ -1,3 +1,6 @@
+@use 'sass:list';
+@use 'sass:math';
+
 // Colors
 
 $transparent: rgba(255, 255, 255, 0);
@@ -22,20 +25,40 @@ $dark-gray: #161616;
 
 $header-text-size: 0.875rem;
 
+// Nav
+
+$nav-desktop-font-size: 1.125rem;
+
 // --
 
 $line-height-value: 1.2;
 
 $header-desktop-margin: 1.875rem 3.75rem 0;
 
-$main-mobile-padding: 1.875rem 1.875rem 3.75rem;
-$main-desktop-padding: 2.5rem 3.75rem;
-
 $header-mobile-padding: 1.25rem 1.875rem;
 $header-desktop-padding: 1.25rem 1.875rem;
 
-$main-desktop-min-height: calc(100svh - #{nth($header-desktop-padding, 1) * 2} - #{$header-text-size * $line-height-value});
-$main-mobile-min-height: calc(100svh - #{nth($header-mobile-padding, 1) * 2} - #{$header-text-size * $line-height-value});
+$header-logo-size: 1.884rem;
+$navbar-desktop-padding: 0.25rem 1rem;
+$navbar-mobile-padding: 0.25rem 1rem;
+
+$navbar-desktop-height: $line-height-value * $nav-desktop-font-size +
+  list.nth($navbar-desktop-padding, 1) * 2;
+$navbar-mobile-height: $line-height-value * $nav-desktop-font-size +
+  list.nth($navbar-mobile-padding, 1) * 2;
+
+$header-desktop-content-height: math.max($header-logo-size, $navbar-desktop-height);
+$header-mobile-content-height: math.max($header-logo-size, $navbar-mobile-height);
+
+$header-desktop-height: $header-desktop-content-height + list.nth($header-desktop-padding, 1) * 2;
+$header-mobile-height: $header-mobile-content-height + list.nth($header-mobile-padding, 1) * 2;
+
+$main-desktop-padding: $header-desktop-height 3.75rem 2.5rem;
+$main-mobile-padding: $header-mobile-height 1.875rem 3.75rem;
+
+// No longer necessary since the header is fixed and does not take up space on the page. Therefore, it can always be 100svh.
+//$main-desktop-min-height: calc(100svh - #{$header-desktop-height});
+//$main-mobile-min-height: calc(100svh - #{$header-mobile-height});
 
 //$news-card-desktop-width: 25rem;
 
@@ -47,10 +70,6 @@ $main-mobile-min-height: calc(100svh - #{nth($header-mobile-padding, 1) * 2} - #
 
 $border-radius-2: 0.125rem;
 $border-radius-5: 0.3125rem;
-
-// Nav
-
-$nav-desktop-font-size: 1rem;
 
 // Spacing
 $root-padding: 2.5rem 3.125rem 3.125rem; // desatualizado

@@ -1,27 +1,27 @@
 @use '../Variables.scss' as *;
 
 .nav-desktop {
-  display: grid;
-  grid-template-columns: repeat(4, max-content);
+  //display: grid;
   background-color: var(--navbar-bg-color);
 }
 
 .nav-desktop ul {
   display: grid;
-  grid-template-columns: repeat(4, max-content);
+  grid-template-columns: repeat(2, max-content);
 }
 
 .nav-desktop a {
   //cursor: pointer;
   color: var(--navbar-link-text-color);
-
-  padding: 0.25rem 1rem;
+  height: max-content;
+  padding: $navbar-mobile-padding;
   text-decoration: none;
   border: none;
 
   font-family: $font-navbar;
   font-weight: $bold;
-  font-size: 1.125rem;
+  font-size: $nav-desktop-font-size;
+  line-height: $line-height-value;
 
   position: relative;
 
@@ -67,6 +67,6 @@
   }
 
   .nav-desktop a {
-    /* font-size: 4rem; */
+    padding: $navbar-desktop-padding;
   }
 }

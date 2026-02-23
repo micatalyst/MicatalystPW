@@ -55,7 +55,7 @@ export default function Header() {
   return (
     <header className="header">
       <Image
-        className="header__logo"
+        className="header-logo"
         src="/logotipo.svg"
         alt="Micatalyst logo"
         width={40}

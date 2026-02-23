@@ -1,13 +1,16 @@
 @use '../Variables.scss' as *;
 
 .projects {
-  
+  align-content: center;
+  //padding-top: $header-desktop-height;
 }
 
 .projects-list {
   display: grid;
   grid-template-columns: repeat(4, 15.625rem);
   gap: 5rem;
+
+  justify-content: center;
 }
 
 .project-card {

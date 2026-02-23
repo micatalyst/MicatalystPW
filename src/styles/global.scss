@@ -106,13 +106,14 @@ body {
 } */
 
 .main {
-  padding: $main-mobile-padding;
   display: grid;
   grid-template-columns: 1fr; // Estas 2 grid-templates (columns & rows) para garantir que eu possa expandir qualquer grid com (1fr) para o tamanho da página
   grid-template-rows: max-content;
   flex: 1;
   align-content: flex-start;
-  min-height: $main-mobile-min-height;
+
+  padding: $main-mobile-padding;
+  min-height: 100svh;
   max-width: 100%;
 
   /*  &.stretch {
@@ -173,7 +174,7 @@ button {
 
   .main {
     padding: $main-desktop-padding;
-    min-height: $main-desktop-min-height;
+    min-height: 100svh;
   }
 
   /* h2 {

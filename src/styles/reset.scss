@@ -1,0 +1,94 @@
+@use 'variables' as *;
+
+:root {
+  -webkit-tap-highlight-color: transparent;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* Body & Text Resets */
+body {
+  line-height: $line-height-value;
+  -webkit-font-smoothing: antialiased;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Image & Media Resets */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+  vertical-align: middle;
+  font-style: italic;
+}
+
+/* Form & Button Resets */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+select {
+  //cursor: pointer;
+  text-decoration: none;
+}
+
+button {
+  all: unset;
+  //cursor: pointer;
+}
+
+button:focus-visible:not(:disabled),
+a:focus-visible:not(:disabled),
+input:focus-visible:not(:disabled),
+textarea:focus-visible:not(:disabled),
+select:focus-visible:not(:disabled) {
+  //outline: 0.125rem solid #f3b21b;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Link Resets */
+a {
+  text-decoration: none;
+  color: inherit;
+
+  /* &:visited {
+    color: currentColor;
+  } */
+}
+
+/* Layout Resets */
+#root,
+#__next {
+  isolation: isolate;
+}

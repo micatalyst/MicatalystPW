@@ -1,0 +1,188 @@
+@use 'variables' as *;
+@use 'reset';
+
+//@import 'locomotive-scroll/dist/locomotive-scroll.css';
+
+:root {
+  font-family: $font-primary;
+  //font-size: ;
+  font-weight: $bold;
+  background-color: var(--bg-color);
+  // color: $white;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent],
+.lenis [data-lenis-prevent-wheel],
+.lenis [data-lenis-prevent-touch] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+.lenis.lenis-autoToggle {
+  transition-property: overflow;
+  transition-duration: 1ms;
+  transition-behavior: allow-discrete;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* html {
+  font-size: 110%; // mais tarde convem provavelmente alterar o tamanho de tudo em vez de apenas mexer na percentagem (isto porque o default deveria ser o tamanho 100%)
+} */
+
+/* a {
+  //color: var(--base-text-color);
+} */
+
+body {
+  //box-sizing: border-box;
+  //padding: $root-padding;
+
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+/* @media (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  a,
+  button,
+  [role='button'],
+  input,
+  textarea,
+  select,
+  summary {
+    cursor: none;
+  }
+
+  #custom-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    background: #fff;
+    mix-blend-mode: difference;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    transition:
+      transform 0.12s ease-out,
+      width 0.15s ease,
+      height 0.15s ease,
+      opacity 0.2s ease;
+  }
+
+  #custom-cursor.is-hover {
+    width: 1.625rem;
+    height: 1.625rem;
+  }
+
+  #custom-cursor.is-down {
+    width: 1.125rem;
+    height: 1.125rem;
+  }
+
+  #custom-cursor.is-hidden {
+    opacity: 0;
+  }
+} */
+
+.main {
+  padding: $main-mobile-padding;
+  display: grid;
+  grid-template-columns: 1fr; // Estas 2 grid-templates (columns & rows) para garantir que eu possa expandir qualquer grid com (1fr) para o tamanho da página
+  grid-template-rows: max-content;
+  flex: 1;
+  align-content: flex-start;
+  min-height: $main-mobile-min-height;
+  max-width: 100%;
+
+  /*  &.stretch {
+    align-content: normal;
+    grid-template-rows: 1fr;
+    overflow: hidden;
+  }
+
+  &.center {
+    justify-items: center;
+  } */
+}
+
+button {
+  border: none;
+  background-color: inherit;
+  text-align: inherit;
+}
+
+.btn-primary {
+  width: max-content;
+  border: none;
+  border-radius: $border-radius-2;
+
+  padding: 0.5rem 1rem;
+
+  font-size: 1rem;
+  font-weight: $semi-bold;
+
+  background-color: var(--btn-primary-bg-color);
+  color: var(--btn-primary-text-color);
+}
+
+/* .progressive-button-container {
+  display: grid;
+
+  &.single-left {
+    grid-template-columns: max-content;
+    justify-content: start;
+  }
+
+  &.single-right {
+    grid-template-columns: max-content;
+    justify-content: end;
+  }
+
+  &.double {
+    grid-template-columns: 1fr max-content;
+    gap: 1rem;
+    align-items: center;
+  }
+} */
+
+@media screen and (min-width: #{$laptop}) {
+  html {
+    font-size: 80%;
+  }
+
+  .main {
+    padding: $main-desktop-padding;
+    min-height: $main-desktop-min-height;
+  }
+
+  /* h2 {
+    font-size: 4rem;
+  } */
+}
+
+@media screen and (min-width: #{$desktop}) {
+  html {
+    font-size: 100%;
+  }
+}

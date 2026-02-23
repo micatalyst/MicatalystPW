@@ -1,0 +1,85 @@
+// Colors
+
+$transparent: rgba(255, 255, 255, 0);
+$white: #ffffff;
+$dark-gray: #161616;
+
+:root {
+  // Colors
+  --bg-color: #{$dark-gray};
+  --text-color: #{$white};
+
+  --header-bg-color: #{$dark-gray};
+  --header-border-color: #{$white};
+
+  --navbar-bg-color: #{$transparent};
+  --navbar-link-text-color: #{$white};
+  --navbar-active-Link-text-color: #{$dark-gray};
+  --navbar-active-Link-bg-color: #{$white};
+}
+
+// Header
+
+$header-text-size: 0.875rem;
+
+// --
+
+$line-height-value: 1.2;
+
+$header-desktop-margin: 1.875rem 3.75rem 0;
+
+$main-mobile-padding: 1.875rem 1.875rem 3.75rem;
+$main-desktop-padding: 2.5rem 3.75rem;
+
+$header-mobile-padding: 1.25rem 1.875rem;
+$header-desktop-padding: 1.25rem 1.875rem;
+
+$main-desktop-min-height: calc(100svh - #{nth($header-desktop-padding, 1) * 2} - #{$header-text-size * $line-height-value});
+$main-mobile-min-height: calc(100svh - #{nth($header-mobile-padding, 1) * 2} - #{$header-text-size * $line-height-value});
+
+//$news-card-desktop-width: 25rem;
+
+/* [data-theme='dark'] {
+  // Colors
+} */
+
+// Border-Radius
+
+$border-radius-2: 0.125rem;
+$border-radius-5: 0.3125rem;
+
+// Nav
+
+$nav-desktop-font-size: 1rem;
+
+// Spacing
+$root-padding: 2.5rem 3.125rem 3.125rem; // desatualizado
+
+// Font
+
+$font-navbar: var(--font-satoshi);
+
+$font-primary: var(--font-inter);
+$font-section-title: var(--font-bebas-neue);
+$font-music-score-title: var(--font-roboto-slab);
+
+// Typography
+
+$extra-light: 200;
+$light: 300;
+$regular: 400;
+$medium: 500;
+$semi-bold: 600;
+$bold: 700;
+$extra-bold: 800;
+
+// MediaQueries breakpoints
+
+$mobile: '20rem';
+$mobileM: '23.4375rem';
+$mobileL: '26.5625rem';
+$tablet: '48rem';
+$laptop: '66.625rem';
+$laptopL: '90rem';
+$desktop: '96.0625rem';
+$desktopL: '160rem';

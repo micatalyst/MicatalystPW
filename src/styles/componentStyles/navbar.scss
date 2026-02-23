@@ -1,0 +1,72 @@
+@use '../Variables.scss' as *;
+
+.nav-desktop {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+  background-color: var(--navbar-bg-color);
+}
+
+.nav-desktop ul {
+  display: grid;
+  grid-template-columns: repeat(4, max-content);
+}
+
+.nav-desktop a {
+  //cursor: pointer;
+  color: var(--navbar-link-text-color);
+
+  padding: 0.25rem 1rem;
+  text-decoration: none;
+  border: none;
+
+  font-family: $font-navbar;
+  font-weight: $bold;
+  font-size: 1.125rem;
+
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 25%;
+    width: 1px;
+    height: 50%;
+    background-color: var(--navbar-link-text-color);
+    opacity: 0.25;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+  }
+
+  &.active::before {
+    opacity: 0;
+  }
+
+  &.active + a::before {
+    opacity: 0;
+  }
+
+  &:first-child::before {
+    content: none;
+  }
+
+  &.active {
+    color: var(--navbar-active-Link-text-color);
+    background-color: var(--navbar-active-Link-bg-color);
+  }
+
+  /* &:hover {
+    color: var(--navbar-active-Link-text-color);
+    background-color: var(--navbar-active-Link-bg-color);
+  } */
+}
+
+@media screen and (min-width: #{$laptop}) {
+  .nav-desktop {
+    /* width: 31.25rem; */
+  }
+
+  .nav-desktop a {
+    /* font-size: 4rem; */
+  }
+}

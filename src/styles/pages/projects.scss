@@ -1,0 +1,30 @@
+@use '../Variables.scss' as *;
+
+.projects {
+  
+}
+
+.projects-list {
+  display: grid;
+  grid-template-columns: repeat(4, 15.625rem);
+  gap: 5rem;
+}
+
+.project-card {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  border: 1px solid var(--header-border-color);
+  border-radius: $border-radius-5;
+  text-decoration: none;
+  color: inherit;
+  height: 29.0625rem;
+}
+
+.project-card-title {
+  font-family: $font-navbar;
+  text-align: center;
+  padding-bottom: 1.25rem; /* ~20px */
+}
+
+.project-card-content {
+}

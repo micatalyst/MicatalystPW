@@ -19,6 +19,8 @@ $dark-gray: #161616;
   --navbar-link-text-color: #{$white};
   --navbar-active-Link-text-color: #{$dark-gray};
   --navbar-active-Link-bg-color: #{$white};
+
+  --projects-card-title-text-color: #{$white};
 }
 
 // Header
@@ -76,7 +78,7 @@ $root-padding: 2.5rem 3.125rem 3.125rem; // desatualizado
 
 // Font
 
-$font-navbar: var(--font-satoshi);
+$font-satoshi: var(--font-satoshi);
 
 $font-primary: var(--font-inter);
 $font-section-title: var(--font-bebas-neue);

@@ -1,0 +1,221 @@
+// portalButton.scss
+// Global styles — import once, no CSS Modules needed.
+
+$ease-slide: cubic-bezier(0.76, 0, 0.24, 1);
+$duration: 0.35s;
+$btn-w: 13.75rem;
+$btn-h: 3.5rem;
+$border-color: #222222;
+$solid-color: #1a1a1a;
+$label-color-default: #222222;
+$label-color-hover: #ffffff;
+
+// ─── Base button ──────────────────────────────────────────────────────────────
+
+.portal-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: $btn-w;
+  height: $btn-h;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  //border: 1.5px solid $border-color;
+  //border-radius: 0.1875rem;
+  background: transparent;
+  padding: 0;
+  outline: none;
+}
+
+// ─── Blob canvas ──────────────────────────────────────────────────────────────
+// Only transform — no opacity transition, blob slides out as a solid panel.
+
+.portal-btn .portal-blob-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transition: transform $duration $ease-slide;
+}
+
+// ─── Solid hover background ───────────────────────────────────────────────────
+
+.portal-btn .portal-solid-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: $solid-color;
+  transition: transform $duration $ease-slide;
+}
+
+// ─── Labels ───────────────────────────────────────────────────────────────────
+
+.portal-btn .portal-label-default,
+.portal-btn .portal-label-hover {
+  position: absolute;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4375rem;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+// Default label: fades out in place only, no transform movement.
+.portal-btn .portal-label-default {
+  color: $label-color-default;
+  opacity: 1;
+  transition: opacity ($duration * 0.7) $ease-slide;
+}
+
+.portal-btn .portal-label-hover {
+  color: $label-color-hover;
+  opacity: 0;
+  transition:
+    transform $duration $ease-slide,
+    opacity 0.3s ease 0.1s;
+}
+
+.portal-btn .portal-arrow {
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+// ─── Slide: UP ────────────────────────────────────────────────────────────────
+
+.portal-btn.slide-up .portal-solid-bg {
+  transform: translate(0, 100%);
+}
+
+.portal-btn.slide-up .portal-label-hover {
+  transform: translate(0, $btn-h);
+  opacity: 0;
+}
+
+.portal-btn.slide-up:hover .portal-blob-bg {
+  transform: translate(0, -100%);
+}
+
+.portal-btn.slide-up:hover .portal-solid-bg {
+  transform: translate(0, 0);
+}
+
+.portal-btn.slide-up:hover .portal-label-default {
+  opacity: 0;
+}
+
+.portal-btn.slide-up:hover .portal-label-hover {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.portal-btn.slide-up:hover .portal-arrow {
+  transform: translateY(-0.125rem);
+}
+
+// ─── Slide: DOWN ──────────────────────────────────────────────────────────────
+
+.portal-btn.slide-down .portal-solid-bg {
+  transform: translate(0, -100%);
+}
+
+.portal-btn.slide-down .portal-label-hover {
+  transform: translate(0, #{-$btn-h});
+  opacity: 0;
+}
+
+.portal-btn.slide-down:hover .portal-blob-bg {
+  transform: translate(0, 100%);
+}
+
+.portal-btn.slide-down:hover .portal-solid-bg {
+  transform: translate(0, 0);
+}
+
+.portal-btn.slide-down:hover .portal-label-default {
+  opacity: 0;
+}
+
+.portal-btn.slide-down:hover .portal-label-hover {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.portal-btn.slide-down:hover .portal-arrow {
+  transform: translateY(0.125rem);
+}
+
+// ─── Slide: LEFT ──────────────────────────────────────────────────────────────
+
+.portal-btn.slide-left .portal-solid-bg {
+  transform: translate(100%, 0);
+}
+
+.portal-btn.slide-left .portal-label-hover {
+  transform: translate($btn-w, 0);
+  opacity: 0;
+}
+
+.portal-btn.slide-left:hover .portal-blob-bg {
+  transform: translate(-100%, 0);
+}
+
+.portal-btn.slide-left:hover .portal-solid-bg {
+  transform: translate(0, 0);
+}
+
+.portal-btn.slide-left:hover .portal-label-default {
+  opacity: 0;
+}
+
+.portal-btn.slide-left:hover .portal-label-hover {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.portal-btn.slide-left:hover .portal-arrow {
+  transform: translateX(-0.1875rem);
+}
+
+// ─── Slide: RIGHT ─────────────────────────────────────────────────────────────
+
+.portal-btn.slide-right .portal-solid-bg {
+  transform: translate(-100%, 0);
+}
+
+.portal-btn.slide-right .portal-label-hover {
+  transform: translate(#{-$btn-w}, 0);
+  opacity: 0;
+}
+
+.portal-btn.slide-right:hover .portal-blob-bg {
+  transform: translate(100%, 0);
+}
+
+.portal-btn.slide-right:hover .portal-solid-bg {
+  transform: translate(0, 0);
+}
+
+.portal-btn.slide-right:hover .portal-label-default {
+  opacity: 0;
+}
+
+.portal-btn.slide-right:hover .portal-label-hover {
+  transform: translate(0, 0);
+  opacity: 1;
+}
+
+.portal-btn.slide-right:hover .portal-arrow {
+  transform: translateX(0.1875rem);
+}

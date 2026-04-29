@@ -1,4 +1,4 @@
-//import '@/styles/pages/home.scss'
+import '@/styles/pages/home.scss'
 
 import HomeView from './Home_View'
 

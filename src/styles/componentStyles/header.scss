@@ -2,20 +2,23 @@
 
 .header {
   display: grid;
-  grid-template-columns: 1fr max-content;
+  grid-template-columns: max-content;
   gap: 1.875rem;
 
-  position: fixed;
+  justify-content: center;
+
+  position: absolute;
   top: 0;
   right: 0;
   z-index: 10;
 
   width: 100%;
-  padding: 1.25rem 1.875rem;
+  padding: $header-desktop-padding;
   line-height: $line-height-value;
 
   background-color: var(--header-bg-color);
-  //border-bottom: 1px solid var(--header-border-color);
+
+  border-bottom: 0.0625rem solid var(--gray-lines-color);
 }
 
 .header-logo {
@@ -26,7 +29,5 @@
 
 @media screen and (min-width: #{$laptop}) {
   .header {
-    /* margin: $header-desktop-margin;
-    border-radius: 0.3125rem; */
   }
 }

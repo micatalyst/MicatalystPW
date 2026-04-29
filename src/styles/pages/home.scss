@@ -1,0 +1,126 @@
+@use '../Variables.scss' as *;
+
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  gap: 2.5rem;
+
+  padding: 0 ($page-left-right-padding) 0 ($page-left-right-padding);
+
+  height: 100%;
+  width: 100%;
+  //min-height: $main-desktop-min-height;
+
+  border-bottom: 0.0625rem solid var(--gray-lines-color);
+
+  .hero-intro {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+
+    padding-left: 1rem;
+    padding-top: 0.8rem;
+
+    width: 100%;
+    font-size: 3rem;
+    font-weight: $semi-bold;
+
+    .hero-message {
+      padding: 2.5rem 0;
+    }
+
+    .middle-space {
+      margin-bottom: 1rem;
+    }
+
+    span {
+      &.light-text {
+        font-weight: $extra-light;
+      }
+
+      &.name {
+        color: $color2;
+      }
+    }
+  }
+
+  .hero-sidebar {
+    display: grid;
+    grid-template-rows: 1fr max-content;
+
+    //padding: (2.5rem + 8rem) 4rem 2.5rem 1rem;
+    border-left: 0.0625rem solid var(--gray-lines-color);
+
+    .hero-socials-container {
+      display: grid;
+      justify-items: end;
+      border-bottom: 0.0625rem solid var(--gray-lines-color);
+      padding: 0.8rem 1rem 0.6rem 1rem;
+
+      .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, max-content);
+        gap: 1rem;
+      }
+
+      svg {
+        height: 3rem;
+        width: auto;
+      }
+    }
+
+    .hero-supporting-text {
+      padding: 0.8rem 4rem 0 1rem;
+      line-height: 1.3;
+
+      .arrow-icon {
+        transform: translateY(0.1rem);
+        padding-right: 0.3rem;
+      }
+    }
+  }
+
+  .logo {
+    width: $home-logo-width;
+    height: auto;
+    z-index: 1;
+  }
+}
+
+.about-container {
+  padding: 0 ($page-left-right-padding) 0 ($page-left-right-padding);
+
+  height: 100%;
+  width: 100%;
+
+  border-bottom: 0.0625rem solid var(--gray-lines-color);
+
+  .about-intro {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+
+    padding-left: 1rem;
+    padding-top: 0.8rem;
+
+    border-bottom: 0.0625rem solid var(--gray-lines-color);
+
+    .about-intro-paragraph {
+      padding: 1.5rem 0;
+    }
+  }
+
+  .about-section {
+    display: grid;
+    grid-template-rows: max-content 1fr;
+
+    padding-left: 1rem;
+    padding-top: 0.8rem;
+
+    .middle-space {
+      margin-bottom: 1rem;
+    }
+
+    .about-section-paragraph {
+      padding: 1.5rem 0;
+    }
+  }
+}

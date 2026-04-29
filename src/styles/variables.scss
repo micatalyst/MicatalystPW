@@ -5,14 +5,24 @@
 
 $transparent: rgba(255, 255, 255, 0);
 $white: #ffffff;
-$dark-gray: #161616;
+$dark-gray: #111111;
+$gray-lines: #202020;
+
+$gray1: #5c5c5c;
+
+$color1: #3eccf8;
+$color2: #5e77ff;
+$color3: #7e5af2;
+$color4: #ff5e5e;
 
 :root {
   // Colors
   --bg-color: #{$dark-gray};
   --text-color: #{$white};
 
-  --header-bg-color: #{$dark-gray};
+  --gray-lines-color: #{$gray-lines};
+
+  --header-bg-color: #{$transparent};
   --header-border-color: #{$white};
 
   --navbar-bg-color: #{$transparent};
@@ -35,12 +45,18 @@ $nav-desktop-font-size: 1.125rem;
 
 $line-height-value: 1.2;
 
-$header-desktop-margin: 1.875rem 3.75rem 0;
+//$header-desktop-margin: 1.875rem 3.75rem 0;
 
+$page-left-right-margins: 6rem;
+$page-left-right-padding: 6rem;
+$page-left-right-vertical-lines-margins: calc($page-left-right-margins + $page-left-right-padding);
+
+$header-desktop-padding: 2.25rem $page-left-right-margins 1.25rem;
 $header-mobile-padding: 1.25rem 1.875rem;
-$header-desktop-padding: 1.25rem 1.875rem;
 
 $header-logo-size: 1.884rem;
+$home-logo-width: 15rem;
+
 $navbar-desktop-padding: 0.25rem 1rem;
 $navbar-mobile-padding: 0.25rem 1rem;
 
@@ -52,15 +68,21 @@ $navbar-mobile-height: $line-height-value * $nav-desktop-font-size +
 $header-desktop-content-height: math.max($header-logo-size, $navbar-desktop-height);
 $header-mobile-content-height: math.max($header-logo-size, $navbar-mobile-height);
 
-$header-desktop-height: $header-desktop-content-height + list.nth($header-desktop-padding, 1) * 2;
-$header-mobile-height: $header-mobile-content-height + list.nth($header-mobile-padding, 1) * 2;
+$header-desktop-height: $header-desktop-content-height + list.nth($header-desktop-padding, 1) +
+  list.nth($header-desktop-padding, 3);
+$header-mobile-height: $header-mobile-content-height + list.nth($header-desktop-padding, 1) +
+  list.nth($header-desktop-padding, 3);
 
-$main-desktop-padding: $header-desktop-height 3.75rem 2.5rem;
+$main-desktop-padding: $header-desktop-height $page-left-right-margins 2.5rem;
 $main-mobile-padding: $header-mobile-height 1.875rem 3.75rem;
 
-// No longer necessary since the header is fixed and does not take up space on the page. Therefore, it can always be 100svh.
-//$main-desktop-min-height: calc(100svh - #{$header-desktop-height});
-//$main-mobile-min-height: calc(100svh - #{$header-mobile-height});
+// actually necessary again //No longer necessary since the header is fixed and does not take up space on the page. Therefore, it can always be 100svh.
+$main-desktop-min-height: calc(
+  100svh - #{$header-desktop-height} - list.nth($main-desktop-padding, 3)
+);
+$main-mobile-min-height: calc(
+  100svh - #{$header-mobile-height} - list.nth($main-mobile-padding, 3)
+);
 
 //$news-card-desktop-width: 25rem;
 
@@ -79,10 +101,8 @@ $root-padding: 2.5rem 3.125rem 3.125rem; // desatualizado
 // Font
 
 $font-satoshi: var(--font-satoshi);
-
-$font-primary: var(--font-inter);
-$font-section-title: var(--font-bebas-neue);
-$font-music-score-title: var(--font-roboto-slab);
+$font-primary: var(--font-lexend);
+$font-secondary: var(--font-inter);
 
 // Typography
 

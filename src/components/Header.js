@@ -1,8 +1,7 @@
 'use client'
 
-import Image from 'next/image'
-
 import '@/styles/componentStyles/header.scss'
+
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 
@@ -22,6 +21,7 @@ export default function Header() {
   const navItems = [
     { href: '/', title: 'Profile' },
     { href: '/projects', title: 'Projects' },
+    { href: '/contact', title: 'Contact' },
   ]
 
   const dynamicRoutes = [
@@ -54,14 +54,6 @@ export default function Header() {
 
   return (
     <header className="header">
-      <Image
-        className="header-logo"
-        src="/logotipo.svg"
-        alt="Micatalyst logo"
-        width={40}
-        height={40}
-        priority
-      />
       <Navbar navItems={navItems} setIsActive={setIsActive} isActive={isActive} />
     </header>
   )
